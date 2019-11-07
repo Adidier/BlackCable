@@ -67,6 +67,9 @@
     <ClCompile Include="BCE\ShaderManager.cpp">
       <Filter>BCE</Filter>
     </ClCompile>
+    <ClCompile Include="BCE\Transform.cpp">
+      <Filter>BCE</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BCE\Platform.h">
@@ -115,6 +118,9 @@
       <Filter>BCE</Filter>
     </ClInclude>
     <ClInclude Include="BCE\ShaderManager.h">
+      <Filter>BCE</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Transform.h">
       <Filter>BCE</Filter>
     </ClInclude>
   </ItemGroup>
