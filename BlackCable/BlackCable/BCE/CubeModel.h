@@ -18,6 +18,7 @@ public:
 	void Draw() override;
 private:
 	void LoadMesh() override;
+	float ex;
 	float angle{ 0 };
 	Texture *texture;
 	Material* material;

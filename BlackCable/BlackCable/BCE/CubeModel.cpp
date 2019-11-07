@@ -4,17 +4,14 @@
 #include <gtc\type_ptr.hpp>
 #include "ShaderManager.h"
 
-CubeModel::CubeModel()
-{
+CubeModel::CubeModel(){
 }
 
 
-CubeModel::~CubeModel()
-{
+CubeModel::~CubeModel(){
 }
 
-void CubeModel::Init()
-{
+void CubeModel::Init(){
 	LoadMesh();
 	ShaderManager::getPtr()->LoadShaders();
 	texture = new Texture("Assets/Textures/brick.png");
@@ -22,24 +19,22 @@ void CubeModel::Init()
 	material = new Material(1, 1);
 }
 
-void CubeModel::Draw()
-{
+void CubeModel::Draw(){
 	GLuint uniformModel = 0;
 	uniformModel = ShaderManager::getPtr()->GetModelLocation();
-	glm::mat4 model(1);
-	////model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
-	////model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
-	model = glm::rotate(model, angle, glm::vec3(1.0f, 1.0f, 0.0f));
-	angle += 0.001f;
-	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+	angle += 0.01f;
+	ex = -100;
+	ex = ex + 1;
+	transform.setRotate(0.0f, angle, 0.0f);
+	transform.setTranslate(ex,0.0f,1);
+	transform.setScale(1,1,1);
+	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(transform.getMatTransform()));
 	texture->UseTexture();
-
 	material->UseMaterial();
 	meshList[0]->RenderMesh();
 }
 
-void CubeModel::LoadMesh()
-{
+void CubeModel::LoadMesh(){
 	unsigned int indices[] = {
 		// front
 		0,1,2,

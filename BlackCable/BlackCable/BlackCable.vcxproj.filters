@@ -67,6 +67,9 @@
     <ClCompile Include="BCE\ShaderManager.cpp">
       <Filter>BCE</Filter>
     </ClCompile>
+    <ClCompile Include="BCE\Transform.cpp">
+      <Filter>BCE</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BCE\Platform.h">
@@ -117,6 +120,10 @@
     <ClInclude Include="BCE\ShaderManager.h">
       <Filter>BCE</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="BCE\Transform.h">
+      <Filter>BCE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Menu\gouraud-shader.frag">
@@ -131,5 +138,10 @@
     <None Include="Assets\Shaders\Menu\phong-shader.vert">
       <Filter>Archivos de recursos\Shaders\Menu</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BlackCable.rc">
+      <Filter>Archivos de recursos</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

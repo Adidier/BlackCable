@@ -4,6 +4,7 @@
 #include "Shader.h"
 #include "Mesh.h"
 #include "Camera.h"
+#include "Transform.h"
 #include<vector>
 
 
@@ -15,6 +16,7 @@ public:
 	virtual void Init() = 0;
 	virtual void Draw() = 0;
 protected:
+	Transform transform; 
 	virtual void LoadMesh() = 0;
 	std::vector<Mesh*> meshList;
 
