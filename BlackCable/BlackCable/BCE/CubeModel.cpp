@@ -26,12 +26,13 @@ void CubeModel::Draw()
 {
 	GLuint uniformModel = 0;
 	uniformModel = ShaderManager::getPtr()->GetModelLocation();
-	glm::mat4 model(1);
+	transform.SetRotate(glm::vec3(1.0f, 1.0f, 0.0f), angle);
+	////glm::mat4 model(1);
 	////model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
 	////model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
-	model = glm::rotate(model, angle, glm::vec3(1.0f, 1.0f, 0.0f));
+	////model = glm::rotate(model, angle, );
 	angle += 0.001f;
-	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(transform.GetModel()));
 	texture->UseTexture();
 
 	material->UseMaterial();

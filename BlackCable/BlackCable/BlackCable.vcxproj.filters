@@ -67,6 +67,7 @@
     <ClCompile Include="BCE\ShaderManager.cpp">
       <Filter>BCE</Filter>
     </ClCompile>
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BCE\Platform.h">
@@ -117,6 +118,7 @@
     <ClInclude Include="BCE\ShaderManager.h">
       <Filter>BCE</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Menu\gouraud-shader.frag">
