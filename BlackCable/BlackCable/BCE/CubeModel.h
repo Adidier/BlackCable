@@ -8,6 +8,7 @@
 #include"Texture.h"
 #include "Material.h"
 #include "Light.h"
+#include "Transform.h"
 
 class CubeModel : Model
 {
@@ -21,5 +22,6 @@ private:
 	float angle{ 0 };
 	Texture *texture;
 	Material* material;
+	Transform transform;
 };
 

@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{AAC58711-E8E4-4C7D-9D60-4E1B9A45D84D}</ProjectGuid>
     <RootNamespace>BlackCable</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,6 +140,7 @@
     <ClCompile Include="BCE\Shader.cpp" />
     <ClCompile Include="BCE\ShaderManager.cpp" />
     <ClCompile Include="BCE\Texture.cpp" />
+    <ClCompile Include="BCE\Transform.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="BCE\Shader.h" />
     <ClInclude Include="BCE\ShaderManager.h" />
     <ClInclude Include="BCE\Texture.h" />
+    <ClInclude Include="BCE\Transform.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <ItemGroup>
