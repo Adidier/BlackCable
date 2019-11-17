@@ -41,6 +41,9 @@ void Menu::Draw()
 
 bool Menu::MouseInput(int x, int y)
 {
+	if (x != 0 || y != 0) {
+		camera.mouseControl(x, y);
+	}
 	return false;
 }
 

@@ -28,9 +28,11 @@ private:
 
 	GLfloat yaw;
 	GLfloat pitch;
-
+	GLfloat xpos, ypos;
 	GLfloat moveSpeed;
 	GLfloat turnSpeed;
+
+	bool flag = true;
 
 	void update();
 };

@@ -48,12 +48,6 @@ glm::vec3 Camera::getCameraPosition()
 
 void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 {
-	xChange *= turnSpeed;
-	yChange *= turnSpeed;
-
-	yaw += xChange;
-	pitch += yChange;
-
 	if (pitch > 89.0f)
 	{
 		pitch = 89.0f;
@@ -63,6 +57,23 @@ void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 	{
 		pitch = -89.0f;
 	}
+
+	if (flag) {
+		xpos = xChange;
+		ypos = yChange;
+	}
+	float xoffset = xChange - xpos;
+	float yoffset = ypos - yChange;
+
+	xoffset *= turnSpeed;
+	yoffset *= turnSpeed;
+	yaw += xoffset;
+	pitch += yoffset;
+
+	xpos = xChange;
+	ypos = yChange;
+
+	flag = false;
 
 	update();
 }
