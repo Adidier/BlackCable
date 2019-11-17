@@ -28,7 +28,9 @@ private:
 
 	GLfloat yaw;
 	GLfloat pitch;
-
+	GLfloat lastX;
+	GLfloat lastY;
+	bool firstMouse;
 	GLfloat moveSpeed;
 	GLfloat turnSpeed;
 

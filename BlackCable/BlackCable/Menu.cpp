@@ -21,7 +21,7 @@ void Menu::Init()
 	this->platform = Platform::GetPtr();
 	this->manager = GameStateManager::getPtr();
 	shaderManager = ShaderManager::getPtr();
-	camera = Camera(glm::vec3(-12.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 55.0f, 0.5f);
+	camera = Camera(glm::vec3(-12.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 55.0f, 0.1f);
 	shaderManager->initShader(&camera);
 	cube = new CubeModel();
 	cube->Init();
@@ -41,6 +41,9 @@ void Menu::Draw()
 
 bool Menu::MouseInput(int x, int y)
 {
+
+	camera.mouseControl(x, y);
+
 	return false;
 }
 

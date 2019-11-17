@@ -4,6 +4,7 @@ Camera::Camera() {}
 
 Camera::Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, GLfloat startMoveSpeed, GLfloat startTurnSpeed)
 {
+	firstMouse = true;
 	position = startPosition;
 	worldUp = startUp;
 	yaw = startYaw;
@@ -48,11 +49,23 @@ glm::vec3 Camera::getCameraPosition()
 
 void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 {
-	xChange *= turnSpeed;
-	yChange *= turnSpeed;
+	if(firstMouse)
+	{
+		lastX = xChange;
+		lastY = yChange;
+		firstMouse = false;
+	}
 
-	yaw += xChange;
-	pitch += yChange;
+	GLfloat xOffSet = xChange - lastX;
+	GLfloat yOffSet = yChange - lastY;
+
+	lastX = xChange;
+	lastY = yChange;
+
+	xOffSet *= turnSpeed;
+	yOffSet *= turnSpeed;
+	yaw += xOffSet;
+	pitch -= yOffSet;
 
 	if (pitch > 89.0f)
 	{
