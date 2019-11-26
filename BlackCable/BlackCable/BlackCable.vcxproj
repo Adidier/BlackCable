@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -85,28 +85,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-<<<<<<< HEAD
-      <AdditionalIncludeDirectories>..\ExternalLibs\std_image\include;..\ExternalLibs\glm;..\ExternalLibs\glfw-3.3.bin.WIN32\include\GLFW;..\ExternalLibs\glew-2.1.0\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
     <Link>
+      <ClCompile>
+        <WarningLevel>Level3</WarningLevel>
+        <Optimization>Disabled</Optimization>
+        <SDLCheck>true</SDLCheck>
+        <ConformanceMode>true</ConformanceMode>
+        <AdditionalIncludeDirectories>..\ExternalLibs\std_image\include;..\ExternalLibs\glm;..\ExternalLibs\glfw-3.3.bin.WIN32\include\GLFW;..\ExternalLibs\glew-2.1.0\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      </ClCompile>
+      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\Assimp\x64\lib;..\ExternalLibs\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;assimp-vc142-mtd.lib;Opengl32.lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <!--<Link>
+    <ItemDefinitionGroup>
+      
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\ExternalLibs\glew-2.1.0\lib\Release\Win32;..\ExternalLibs\glfw-3.3.bin.WIN32\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-=======
+
       <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
+    </ItemDefinitionGroup>
+
+  </Link>-->
+  <!--<Link>
+      <ItemDefinitionGroup>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\glew-2.1.0\lib\Release\x64;..\ExternalLibs\Assimp\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
->>>>>>> upstream/master
-    </Link>
-  </ItemDefinitionGroup>
+    </ItemDefinitionGroup>
+   </Link>-->
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -138,23 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClCompile Include="BCE\Camera.cpp" />
-    <ClCompile Include="BCE\CubeModel.cpp" />
-    <ClCompile Include="BCE\DirectionalLight.cpp" />
-    <ClCompile Include="BCE\GameState.cpp" />
-    <ClCompile Include="BCE\GameStateManager.cpp" />
-    <ClCompile Include="BCE\Light.cpp" />
-    <ClCompile Include="BCE\Material.cpp" />
-    <ClCompile Include="BCE\Mesh.cpp" />
-    <ClCompile Include="BCE\PlaneModel.cpp" />
-    <ClCompile Include="BCE\Platform.cpp" />
-    <ClCompile Include="BCE\PointLight.cpp" />
-    <ClCompile Include="BCE\Shader.cpp" />
-    <ClCompile Include="BCE\ShaderManager.cpp" />
-    <ClCompile Include="BCE\Texture.cpp" />
     <ClCompile Include="BCE\Transform.cpp" />
-=======
     <ClCompile Include="BCE\Base\GameState.cpp" />
     <ClCompile Include="BCE\Base\GameStateManager.cpp" />
     <ClCompile Include="BCE\Base\Platform.cpp" />
@@ -173,31 +168,12 @@
     <ClCompile Include="BCE\Lights\DirectionalLight.cpp" />
     <ClCompile Include="BCE\Lights\Light.cpp" />
     <ClCompile Include="BCE\Lights\PointLight.cpp" />
->>>>>>> upstream/master
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClInclude Include="BCE\Camera.h" />
-    <ClInclude Include="BCE\CubeModel.h" />
-    <ClInclude Include="BCE\DirectionalLight.h" />
-    <ClInclude Include="BCE\GameState.h" />
-    <ClInclude Include="BCE\GameStateManager.h" />
-    <ClInclude Include="BCE\Light.h" />
-    <ClInclude Include="BCE\Material.h" />
-    <ClInclude Include="BCE\Mesh.h" />
-    <ClInclude Include="BCE\Model.h" />
-    <ClInclude Include="BCE\PlaneModel.h" />
-    <ClInclude Include="BCE\Platform.h" />
-    <ClInclude Include="BCE\PointLight.h" />
-    <ClInclude Include="BCE\Shader.h" />
-    <ClInclude Include="BCE\ShaderManager.h" />
-    <ClInclude Include="BCE\Texture.h" />
     <ClInclude Include="BCE\Transform.h" />
-    <ClInclude Include="Menu.h" />
-=======
     <ClInclude Include="BCE\Base\GameState.h" />
     <ClInclude Include="BCE\Base\GameStateManager.h" />
     <ClInclude Include="BCE\Base\Platform.h" />
@@ -218,7 +194,6 @@
     <ClInclude Include="BCE\Lights\PointLight.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
->>>>>>> upstream/master
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Default\default.frag" />
