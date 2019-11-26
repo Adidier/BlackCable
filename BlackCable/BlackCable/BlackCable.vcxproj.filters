@@ -14,128 +14,176 @@
     <Filter Include="Archivos de recursos\Shaders">
       <UniqueIdentifier>{4078b757-b253-4da4-9952-76e4371b61a1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de recursos\Shaders\Menu">
+    <Filter Include="BCE\Base">
+      <UniqueIdentifier>{002cd6da-8200-457c-8440-dd8b0ec643ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Graphic">
+      <UniqueIdentifier>{b7669a80-1a25-4ac4-b2fb-80b7e996694d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Lights">
+      <UniqueIdentifier>{4412ed54-6b79-43a8-8de9-e7b275482844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Shaders\Default">
       <UniqueIdentifier>{896ca5f9-ecf7-4eb0-bfbb-4ef63b01cb23}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BCE\GameState.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\GameStateManager.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Platform.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="BCE\Base\GameState.cpp">
+      <Filter>BCE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\GameStateManager.cpp">
+      <Filter>BCE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\Platform.cpp">
+      <Filter>BCE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\ShaderManager.cpp">
+      <Filter>BCE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\Transform.cpp">
+      <Filter>BCE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Camera.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\CubeModel.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Material.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Mesh.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\PlaneModel.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Shader.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Texture.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\DirectionalLight.cpp">
+      <Filter>BCE\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\Light.cpp">
+      <Filter>BCE\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\PointLight.cpp">
+      <Filter>BCE\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\BaseModel.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Model.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Skybox.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="BCE\Mesh.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Shader.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Camera.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Texture.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\CubeModel.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Material.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Light.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\DirectionalLight.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\PointLight.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\PlaneModel.cpp">
-      <Filter>BCE</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\ShaderManager.cpp">
-      <Filter>BCE</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="BCE\Transform.cpp">
       <Filter>BCE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BCE\Platform.h">
-      <Filter>BCE</Filter>
+    <ClInclude Include="BCE\Base\GameState.h">
+      <Filter>BCE\Base</Filter>
     </ClInclude>
-    <ClInclude Include="BCE\GameState.h">
-      <Filter>BCE</Filter>
+    <ClInclude Include="BCE\Base\GameStateManager.h">
+      <Filter>BCE\Base</Filter>
     </ClInclude>
-    <ClInclude Include="BCE\GameStateManager.h">
-      <Filter>BCE</Filter>
+    <ClInclude Include="BCE\Base\Platform.h">
+      <Filter>BCE\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="BCE\Base\ShaderManager.h">
+      <Filter>BCE\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\Transform.h">
+      <Filter>BCE\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Camera.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\CubeModel.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Material.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Mesh.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\PlaneModel.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Shader.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Texture.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\DirectionalLight.h">
+      <Filter>BCE\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\Light.h">
+      <Filter>BCE\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\PointLight.h">
+      <Filter>BCE\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\BaseModel.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Model.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Skybox.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="BCE\Mesh.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Shader.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Camera.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Texture.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Model.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\CubeModel.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Material.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Light.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\DirectionalLight.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\PointLight.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\PlaneModel.h">
-      <Filter>BCE</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\ShaderManager.h">
-      <Filter>BCE</Filter>
+    <ClInclude Include="Player.h">
+      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="BCE\Transform.h">
       <Filter>BCE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shaders\Menu\gouraud-shader.frag">
-      <Filter>Archivos de recursos\Shaders\Menu</Filter>
+    <None Include="Assets\Shaders\Default\default.frag">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
     </None>
-    <None Include="Assets\Shaders\Menu\gouraud-shader.vert">
-      <Filter>Archivos de recursos\Shaders\Menu</Filter>
+    <None Include="Assets\Shaders\Default\default.vert">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
     </None>
-    <None Include="Assets\Shaders\Menu\phong-shader.frag">
-      <Filter>Archivos de recursos\Shaders\Menu</Filter>
+    <None Include="Assets\Shaders\Default\gouraud-shader.frag">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
     </None>
-    <None Include="Assets\Shaders\Menu\phong-shader.vert">
-      <Filter>Archivos de recursos\Shaders\Menu</Filter>
+    <None Include="Assets\Shaders\Default\gouraud-shader.vert">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\phong-shader.frag">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\phong-shader.vert">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\skybox.frag">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\skybox.vert">
+      <Filter>Archivos de recursos\Shaders\Default</Filter>
     </None>
   </ItemGroup>
 </Project>

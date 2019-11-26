@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -76,12 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\lib-vc2019;..\ExternalLibs\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\lib-vc2019;..\ExternalLibs\glew-2.1.0\lib\Release\Win32;..\ExternalLibs\Assimp\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;assimp-vc141-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -90,12 +90,21 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>..\ExternalLibs\std_image\include;..\ExternalLibs\glm;..\ExternalLibs\glfw-3.3.bin.WIN32\include\GLFW;..\ExternalLibs\glew-2.1.0\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\ExternalLibs\glew-2.1.0\lib\Release\Win32;..\ExternalLibs\glfw-3.3.bin.WIN32\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+=======
+      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\glew-2.1.0\lib\Release\x64;..\ExternalLibs\Assimp\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+>>>>>>> upstream/master
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="BCE\Camera.cpp" />
     <ClCompile Include="BCE\CubeModel.cpp" />
     <ClCompile Include="BCE\DirectionalLight.cpp" />
@@ -144,10 +154,32 @@
     <ClCompile Include="BCE\ShaderManager.cpp" />
     <ClCompile Include="BCE\Texture.cpp" />
     <ClCompile Include="BCE\Transform.cpp" />
+=======
+    <ClCompile Include="BCE\Base\GameState.cpp" />
+    <ClCompile Include="BCE\Base\GameStateManager.cpp" />
+    <ClCompile Include="BCE\Base\Platform.cpp" />
+    <ClCompile Include="BCE\Base\ShaderManager.cpp" />
+    <ClCompile Include="BCE\Base\Transform.cpp" />
+    <ClCompile Include="BCE\Graphic\Camera.cpp" />
+    <ClCompile Include="BCE\Graphic\CubeModel.cpp" />
+    <ClCompile Include="BCE\Graphic\Material.cpp" />
+    <ClCompile Include="BCE\Graphic\Mesh.cpp" />
+    <ClCompile Include="BCE\Graphic\BaseModel.cpp" />
+    <ClCompile Include="BCE\Graphic\Model.cpp" />
+    <ClCompile Include="BCE\Graphic\PlaneModel.cpp" />
+    <ClCompile Include="BCE\Graphic\Shader.cpp" />
+    <ClCompile Include="BCE\Graphic\Skybox.cpp" />
+    <ClCompile Include="BCE\Graphic\Texture.cpp" />
+    <ClCompile Include="BCE\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="BCE\Lights\Light.cpp" />
+    <ClCompile Include="BCE\Lights\PointLight.cpp" />
+>>>>>>> upstream/master
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClInclude Include="BCE\Camera.h" />
     <ClInclude Include="BCE\CubeModel.h" />
     <ClInclude Include="BCE\DirectionalLight.h" />
@@ -165,12 +197,38 @@
     <ClInclude Include="BCE\Texture.h" />
     <ClInclude Include="BCE\Transform.h" />
     <ClInclude Include="Menu.h" />
+=======
+    <ClInclude Include="BCE\Base\GameState.h" />
+    <ClInclude Include="BCE\Base\GameStateManager.h" />
+    <ClInclude Include="BCE\Base\Platform.h" />
+    <ClInclude Include="BCE\Base\ShaderManager.h" />
+    <ClInclude Include="BCE\Base\Transform.h" />
+    <ClInclude Include="BCE\Graphic\Camera.h" />
+    <ClInclude Include="BCE\Graphic\CubeModel.h" />
+    <ClInclude Include="BCE\Graphic\Material.h" />
+    <ClInclude Include="BCE\Graphic\Mesh.h" />
+    <ClInclude Include="BCE\Graphic\BaseModel.h" />
+    <ClInclude Include="BCE\Graphic\Model.h" />
+    <ClInclude Include="BCE\Graphic\PlaneModel.h" />
+    <ClInclude Include="BCE\Graphic\Shader.h" />
+    <ClInclude Include="BCE\Graphic\Skybox.h" />
+    <ClInclude Include="BCE\Graphic\Texture.h" />
+    <ClInclude Include="BCE\Lights\DirectionalLight.h" />
+    <ClInclude Include="BCE\Lights\Light.h" />
+    <ClInclude Include="BCE\Lights\PointLight.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Player.h" />
+>>>>>>> upstream/master
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shaders\Menu\gouraud-shader.frag" />
-    <None Include="Assets\Shaders\Menu\gouraud-shader.vert" />
-    <None Include="Assets\Shaders\Menu\phong-shader.frag" />
-    <None Include="Assets\Shaders\Menu\phong-shader.vert" />
+    <None Include="Assets\Shaders\Default\default.frag" />
+    <None Include="Assets\Shaders\Default\default.vert" />
+    <None Include="Assets\Shaders\Default\gouraud-shader.frag" />
+    <None Include="Assets\Shaders\Default\gouraud-shader.vert" />
+    <None Include="Assets\Shaders\Default\phong-shader.frag" />
+    <None Include="Assets\Shaders\Default\phong-shader.vert" />
+    <None Include="Assets\Shaders\Default\skybox.frag" />
+    <None Include="Assets\Shaders\Default\skybox.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
