@@ -106,67 +106,67 @@ bool Game::Input(std::map<int, bool> keys)
 void Game::Update()
 {
 	player->Update();
-	//glm::vec3 vec3(0, 0, 0);
-	//auto caja = new Cajas(vec3);
+	//glm::vec3 tvec3(0, 0, 0);
+	//auto caja = new Cajas(tvec3);
 	//caja->Init();
 	//cajasPool.push_back(caja);
 
-	//if(enemyPool.size() < 10)
-	//{
-	//	if(rand() % 100 < 1)
-	//	{
-	//		int dir = -1;
-	//		if(rand() % 100 > 50)
-	//			dir = 1;
-	//		auto enemy = new EnemyT4(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
-	//		enemy->Init();
-	//		enemyPool.push_back(enemy);
-	//	}
+	if(enemyPool.size() < 10)
+	{
+		if(rand() % 100 < 1)
+		{
+			int dir = -1;
+			if(rand() % 100 > 50)
+				dir = 1;
+			auto enemy = new EnemyT4(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
+			enemy->Init();
+			enemyPool.push_back(enemy);
+		}
 
-	//	if(rand() % 100 < 1)
-	//	{
-	//		int dir = -1;
-	//		if(rand() % 100 > 50)
-	//			dir = 1;
-	//		auto enemy = new EnemyT5(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
-	//		enemy->Init();
-	//		enemyPool.push_back(enemy);
-	//	}
+		if(rand() % 100 < 1)
+		{
+			int dir = -1;
+			if(rand() % 100 > 50)
+				dir = 1;
+			auto enemy = new EnemyT5(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
+			enemy->Init();
+			enemyPool.push_back(enemy);
+		}
 
-	//}
-	//
-	//for(auto enemy : enemyPool)
-	//{
-	//	//enemy->FollowPlayer(*enemy, player->GetPlayerPosition());
-	//	vec3 playerVec = player->GetPlayerPosition();
-	//	vec3 enemyVec = enemy->GetPosition();
-	//	vec3 distance = playerVec - enemyVec;
+	}
+	
+	for(auto enemy : enemyPool)
+	{
+		//enemy->FollowPlayer(*enemy, player->GetPlayerPosition());
+		glm::vec3 playerVec = player->GetPlayerPosition();
+		glm::vec3 enemyVec = enemy->GetPosition();
+		glm::vec3 distance = playerVec - enemyVec;
 
-	//	float hyp = sqrt(pow(distance.x, 2) + pow(distance.y, 2) + pow(distance.z, 2));
-	//	distance.x = distance.x / hyp;
-	//	distance.y = distance.y / hyp;
-	//	distance.z = distance.z / hyp;
+		float hyp = sqrt(pow(distance.x, 2) + pow(distance.y, 2) + pow(distance.z, 2));
+		distance.x = distance.x / hyp;
+		distance.y = distance.y / hyp;
+		distance.z = distance.z / hyp;
 
-	//	vec3 newDistance = enemyVec;
-	//	float y = player->GetPlayerPosition().y;
-	//
-	//	if(player->GetPlayerPosition().y >  y)
-	//	{
-	//		distance = distance / vec3(100, 100, 100);
-	//		newDistance.x += distance.x;
-	//		newDistance.y += distance.y;
-	//		newDistance.z += distance.z;
-	//	} else
-	//	{
-	//		distance = distance / vec3(100, 0, 100);
-	//		newDistance.x += distance.x;
-	//		newDistance.z += distance.z;
-	//	}
+		glm::vec3 newDistance = enemyVec;
+		float y = player->GetPlayerPosition().y;
+	
+		if(player->GetPlayerPosition().y >  y)
+		{
+			distance = distance / vec3(50, 50, 50);
+			newDistance.x += distance.x;
+			newDistance.y += distance.y;
+			newDistance.z += distance.z;
+		} else
+		{
+			distance = distance / vec3(50, 0, 50);
+			newDistance.x += distance.x;
+			newDistance.z += distance.z;
+		}
 
 
-	//	enemy->transform.SetTranslation(newDistance);
-	//	enemy->Update();
-	//}
+		enemy->transform.SetTranslation(newDistance);
+		enemy->Update();
+	}
 
 }
 
