@@ -26,7 +26,9 @@ namespace BCE
 
 			glm::mat4 calculateViewMatrix();
 			glm::vec3 getCameraPosition();
+
 			glm::vec3 GetCameraRotation();
+
 			~Camera();
 
 		private:

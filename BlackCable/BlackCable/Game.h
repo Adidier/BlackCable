@@ -14,8 +14,10 @@
 #include "EnemyT4.h"
 #include "EnemyT5.h"
 #include "Enemy.h"
+
 #include "BCE/Building/Building.h"
 #include "BCE/Cajas/Cajas.h"
+
 #include <list>
 
 #include<vector>
@@ -32,6 +34,7 @@ private:
 	Player* player;
 	CubeModel* cube;
 	PlaneModel* plane;
+
 	Model* enemy;
 	Building* building;
 	Cajas* cajas;
@@ -39,6 +42,12 @@ private:
 	Skybox skybox;
 	std::list<Enemy*> enemyPool;
 	std::list<Cajas*> cajasPool;
+
+	Model *enemy;
+	Text text;
+	Skybox skybox;
+	std::list<Enemy *> enemyPool;
+
 
 
 public:

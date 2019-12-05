@@ -24,6 +24,9 @@ private:
 	Model *weapon;
 	Platform* platform;
 	Transform transform;
+	float distanceOffset;
+	float offsetY;
+
 public:
 	Player(glm::vec3 position);
 	glm::vec3 GetPlayerPosition()

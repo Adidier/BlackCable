@@ -10,12 +10,12 @@ Player::Player(glm::vec3 position)
 	glm::vec3 offset = glm::vec3(3, -1, 0);
 	distanceOffset = glm::length(glm::vec3(offset.x, 0, offset.y));
 	offsetY = offset.y;
-
 }
 
 void Player::Init()
 {
 	weapon = new Model();
+
 
 	weapon->LoadModel("Assets/Models/Arma_Jugador.obj", 0);
 	weapon->AddTexture("ArmaUV.png");
@@ -34,7 +34,7 @@ void Player::MouseInput(int x, int y, bool leftbutton)
 		camera.mouseControl(x, y);
 }
 
-void Player::Input(const std::map<int, bool> &keys)
+void Player::Input(const std::map<int, bool>& keys)
 {
 	camera.keyControl(keys, platform->GetDeltaTime());
 }
@@ -42,6 +42,7 @@ void Player::Input(const std::map<int, bool> &keys)
 void Player::Draw()
 {
 	glm::vec3 position = camera.getCameraPosition();
+
 	transform.SetTranslation(position.x +.12, position.y - 0.1, position.z +.1);
 	transform.SetScale(0.1f, 0.1f, 0.1f);
 	transform.SetRotation(0,0,0);

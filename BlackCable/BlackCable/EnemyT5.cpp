@@ -15,17 +15,27 @@ void EnemyT5::Update()
 void EnemyT5::Init()
 {
 	weapon = new Model();
+
 	weapon->LoadModel("Assets/Models/Enemigo_2.obj", 0);
 	weapon->AddTexture("Enemigo_2_UV.png");
+
+	weapon->LoadModel("Assets/Models/Enemy2.obj");
+	weapon->AddTexture("Weapon_UV.png");
+
 }
 
 void EnemyT5::Draw()
 {
+
 	transform.SetScale(1.0f, 1.1f, 1.11f);
+
+	transform.SetScale(1.1f, 1.1f, 1.11f);
+
 	transform.SetRotation(0, 0, 0);
 	weapon->SetTransform(&transform);
 	weapon->Draw();
 }
+
 glm::vec3 EnemyT5::GetPosition()
 {
 	return transform.GetTranslation();
@@ -41,6 +51,8 @@ void EnemyT5::FollowPlayer(Enemy& enemy, glm::vec3 playerPosition)
 	d += distance / glm::vec3(100, 0, 100);
 	transform.SetTranslation(d);
 }
+
+
 void EnemyT5::Shoot()
 {
 

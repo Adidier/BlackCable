@@ -1,6 +1,8 @@
 #include "EnemyT4.h"
 
+
 EnemyT4::EnemyT4(glm::vec3 position, Player* player)
+
 {
 	this->player = player;
 	this->platform = Platform::GetPtr();
@@ -15,8 +17,13 @@ void EnemyT4::Update()
 void EnemyT4::Init()
 {
 	weapon = new Model();
+
 	weapon->LoadModel("Assets/Models/Enemigo.obj", 0);
 	weapon->AddTexture("EnemigoUV.png");
+
+	weapon->LoadModel("Assets/Models/Enemy1.obj");
+	weapon->AddTexture("Weapon_UV.png");
+
 }
 
 void EnemyT4::Draw()
@@ -26,6 +33,7 @@ void EnemyT4::Draw()
 	weapon->SetTransform(&transform);
 	weapon->Draw();
 }
+
 glm::vec3 EnemyT4::GetPosition()
 {
 	return transform.GetTranslation();
@@ -42,6 +50,7 @@ void EnemyT4::FollowPlayer(Enemy& enemy, glm::vec3 playerVector)
 
 	
 }
+
 void EnemyT4::Shoot()
 {
 

@@ -1,4 +1,3 @@
-
 #ifndef ENEMY_H 
 #define ENEMY_H 
 
@@ -20,7 +19,8 @@ protected:
 	int life;
 	int ammo;
 	float speed;
-	Model* weapon;
+
+  	Model* weapon;
 	Platform* platform;
 	Player* player;
 public:
@@ -30,8 +30,21 @@ public:
 	virtual void Draw() = 0;
 	virtual glm::vec3 GetPosition() = 0;
 	virtual void FollowPlayer(Enemy&, glm::vec3 playerVector) = 0;
+  
+  
+	Model *weapon;
+	Platform* platform;
+	Transform transform;
+	Player* player;
+public:
+	virtual void Init() = 0;
+	virtual void Update()=0;
+	virtual void Draw() = 0;
+
 private:
 	virtual void Shoot() = 0;
 };
 
+
 #endif // ! 
+

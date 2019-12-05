@@ -101,6 +101,7 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="EnemyT4.cpp">
+
       <Filter>Game\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="BCE\Graphic\Text.cpp">
@@ -117,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="BCE\Cajas\Cajas.cpp">
       <Filter>BCE\Cajas</Filter>
+      
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyT5.cpp">
+      <Filter>Game</Filter>
+
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +187,8 @@
     <ClInclude Include="Player.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+
+        <ClInclude Include="Enemy.h">
       <Filter>Game\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="EnemyT4.h">
@@ -197,6 +205,16 @@
     </ClInclude>
     <ClInclude Include="BCE\Cajas\Cajas.h">
       <Filter>BCE\Cajas</Filter>
+    
+    <ClInclude Include="EnemyT4.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyT5.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game</Filter>
+
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

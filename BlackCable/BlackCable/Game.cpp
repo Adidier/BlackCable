@@ -68,8 +68,7 @@ void Game::Draw()
 	shaderManager->Activate("phong");
 	shaderManager->draw();
 	plane->Draw();
-
-
+  
 	//shaderManager->Activate("phong");
 	shaderManager->draw();
 	player->Draw();
@@ -85,7 +84,6 @@ void Game::Draw()
 	//{
 	//	cajas->Draw();
 	//}
-
 	platform->RenderPresent();
 
 }
@@ -105,6 +103,7 @@ bool Game::Input(std::map<int, bool> keys)
 
 void Game::Update()
 {
+  
 	player->Update();
 	//glm::vec3 tvec3(0, 0, 0);
 	//auto caja = new Cajas(tvec3);
@@ -168,6 +167,10 @@ void Game::Update()
 		enemy->Update();
 	}
 
+	for (auto enemy : enemyPool)
+	{
+		enemy->Update();
+	}
 }
 
 void Game::Close()
