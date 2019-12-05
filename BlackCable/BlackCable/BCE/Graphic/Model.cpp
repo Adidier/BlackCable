@@ -35,7 +35,7 @@ namespace BCE
 			}
 		}
 
-		void Model::LoadModel(const std::string & fileName)
+		void Model::LoadModel(const std::string & fileName, int number)
 		{
 			Assimp::Importer importer;
 			const aiScene *scene = importer.ReadFile(fileName, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices | aiProcess_CalcTangentSpace);
@@ -48,7 +48,7 @@ namespace BCE
 
 			LoadNode(scene->mRootNode, scene);
 
-			LoadMaterials(scene);
+			LoadMaterials(scene, number);
 		}
 
 		void Model::LoadNode(aiNode * node, const aiScene * scene)
@@ -98,7 +98,7 @@ namespace BCE
 			meshToTex.push_back(mesh->mMaterialIndex);
 		}
 
-		void Model::LoadMaterials(const aiScene * scene)
+		void Model::LoadMaterials(const aiScene * scene, int number)
 		{
 
 			for (size_t i = 0; i < scene->mNumMaterials; i++)
@@ -109,17 +109,21 @@ namespace BCE
 				if (material->GetTextureCount(aiTextureType_DIFFUSE))
 				{
 					aiString path;
-					if (material->GetTexture(aiTextureType_DIFFUSE, 0, &path) == AI_SUCCESS)
+					if(number == 0)
 					{
-						AddTexture(path.C_Str());
+						if (material->GetTexture(aiTextureType_DIFFUSE, 0, &path) == AI_SUCCESS)
+						{
+							AddTexture(path.C_Str());
+						}
+					}
+					else
+					{
+						if(material->GetTexture(aiTextureType_DIFFUSE, 0, &path) == AI_SUCCESS)
+						{
+							AddTextureA(path.C_Str());
+						}
 					}
 				}
-
-				//if (!textureList[i])
-				//{
-				//	textureList[i] = new Texture("Assets/Textures/plain.png");
-				//	textureList[i]->LoadTextureA();
-				//}
 			}
 		}
 
@@ -134,7 +138,26 @@ namespace BCE
 			Texture* texture;
 			texture = new Texture(texPath.c_str());
 
-			if (!texture->LoadTextureA())
+			if (!texture->LoadTexture())
+			{
+				
+				printf("Failed to load texture at: %ch\n", texPath);
+				delete texture;
+				texture = nullptr;
+			}
+			textureList.push_back(texture);
+		}
+
+		void Model::AddTextureA(std::string path)
+		{
+			int idx = std::string(path).rfind("\\");
+			std::string filename = std::string(path).substr(idx + 1);
+
+			std::string texPath = std::string("Assets/Textures/") + filename;
+			Texture* texture;
+			texture = new Texture(texPath.c_str());
+
+			if(!texture->LoadTextureA())
 			{
 				printf("Failed to load texture at: %s\n", texPath);
 				delete texture;

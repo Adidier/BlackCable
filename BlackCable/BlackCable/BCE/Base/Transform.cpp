@@ -15,6 +15,11 @@ namespace BCE
 			_translation.z = z;
 		}
 
+		void Transform::SetTranslation(glm::vec3 vector)
+		{
+			_translation = vector;
+		}
+
 		void Transform::SetRotation(float x, float y, float z)
 		{
 			_rotation.x = x;
@@ -22,11 +27,21 @@ namespace BCE
 			_rotation.z = z;
 		}
 
+		void Transform::SetRotation(glm::vec3 setRotation)
+		{
+			_rotation = setRotation;
+		}
+
 		void Transform::SetScale(float x, float y, float z)
 		{
 			_scale.x = x;
 			_scale.y = y;
 			_scale.z = z;
+		}
+
+		void Transform::SetScale(glm::vec3 vectorScale)
+		{
+			_scale = vectorScale;
 		}
 
 		glm::mat4 Transform::GetTransform()

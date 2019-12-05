@@ -70,6 +70,7 @@ namespace BCE
 			// Create Viewport
 			glViewport(0, 0, bufferWidth, bufferHeight);
 		}
+		
 		Platform::~Platform()
 		{
 			glfwDestroyWindow(mainWindow);
@@ -120,7 +121,7 @@ namespace BCE
 		{
 			if (ptr == nullptr)
 			{
-				ptr = new Platform("GAME", 640, 480);
+				ptr = new Platform("GAME", 1000, 800);
 			}
 			else
 			{

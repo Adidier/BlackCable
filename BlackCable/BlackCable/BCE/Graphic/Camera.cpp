@@ -52,6 +52,11 @@ namespace BCE
 			return position;
 		}
 
+		glm::vec3 Camera::GetCameraRotation()
+		{
+			return front;
+		}
+
 		void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 		{
 			if (firstMove) {
@@ -83,6 +88,16 @@ namespace BCE
 			}
 
 			update();
+		}
+
+		GLfloat Camera::getPitch()
+		{
+			return pitch;
+		}
+
+		GLfloat Camera::getYaw()
+		{
+			return yaw;
 		}
 
 		glm::mat4 Camera::calculateViewMatrix()

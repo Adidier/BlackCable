@@ -26,6 +26,15 @@
     <Filter Include="Archivos de recursos\Shaders\Default">
       <UniqueIdentifier>{896ca5f9-ecf7-4eb0-bfbb-4ef63b01cb23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Enemy">
+      <UniqueIdentifier>{7d0db8c6-3dbe-45d9-956b-dde1bad8dd3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Building">
+      <UniqueIdentifier>{8fde0ea7-83f9-40d1-ac49-df4cb6fc9ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Cajas">
+      <UniqueIdentifier>{fc57cf7a-85d2-4230-8536-01e3584b1c26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,8 +100,23 @@
     <ClCompile Include="Player.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="BCE\Transform.cpp">
-      <Filter>BCE</Filter>
+    <ClCompile Include="EnemyT4.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Text.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\BlackCable\BlackCable\BlackCable\BCE\Graphic\Text.cpp">
+      <Filter>BCE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyT5.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Building\Building.cpp">
+      <Filter>BCE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Cajas\Cajas.cpp">
+      <Filter>BCE\Cajas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,8 +180,23 @@
     <ClInclude Include="Player.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="BCE\Transform.h">
-      <Filter>BCE</Filter>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyT4.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Text.h">
+      <Filter>BCE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyT5.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Building\Building.h">
+      <Filter>BCE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Cajas\Cajas.h">
+      <Filter>BCE\Cajas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

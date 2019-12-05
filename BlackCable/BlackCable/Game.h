@@ -9,12 +9,20 @@
 #include "BCE/Base/ShaderManager.h"
 #include "BCE/Graphic/Model.h"
 #include "BCE/Graphic/Skybox.h"
+#include "BCE/Graphic/Text.h"
 #include "Player.h"
+#include "EnemyT4.h"
+#include "EnemyT5.h"
+#include "Enemy.h"
+#include "BCE/Building/Building.h"
+#include "BCE/Cajas/Cajas.h"
+#include <list>
 
 #include<vector>
 using namespace BCE::Base;
 using namespace BCE::Lights;
 using namespace BCE::Graphics;
+using glm::vec3;
 class Game : public GameState
 {
 private:
@@ -22,10 +30,15 @@ private:
 	GameStateManager* manager;
 	ShaderManager* shaderManager;
 	Player* player;
-	CubeModel *cube;
+	CubeModel* cube;
 	PlaneModel* plane;
-	Model *enemy;
+	Model* enemy;
+	Building* building;
+	Cajas* cajas;
+	Text text;
 	Skybox skybox;
+	std::list<Enemy*> enemyPool;
+	std::list<Cajas*> cajasPool;
 
 
 public:

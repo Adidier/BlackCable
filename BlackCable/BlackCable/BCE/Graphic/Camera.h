@@ -19,9 +19,14 @@ namespace BCE
 
 			void keyControl(std::map<int, bool> keys, GLfloat deltaTime);
 			void mouseControl(GLfloat xChange, GLfloat yChange);
+			
+			GLfloat getPitch();
+			GLfloat getYaw();
+
 
 			glm::mat4 calculateViewMatrix();
 			glm::vec3 getCameraPosition();
+			glm::vec3 GetCameraRotation();
 			~Camera();
 
 		private:

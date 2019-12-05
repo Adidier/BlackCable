@@ -17,6 +17,8 @@ class Player
 private:
 	int life;
 	int ammo;
+	float distanceOffset;
+	float offsetY;
 	float speed;
 	Camera camera;
 	Model *weapon;
@@ -24,7 +26,13 @@ private:
 	Transform transform;
 public:
 	Player(glm::vec3 position);
+	glm::vec3 GetPlayerPosition()
+	{
+		return camera.getCameraPosition();
+	}
+
 	void Init();
+	void Update();
 	void Input(const std::map<int, bool> &keys);
 	void MouseInput(int x, int y, bool leftbutton);
 	void Draw();

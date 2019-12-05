@@ -24,17 +24,18 @@ namespace BCE
 		public:
 			Model();
 			virtual void Init() override;
-			void LoadModel(const std::string& fileName); // Adidier regresa
+			void LoadModel(const std::string& fileName, int numb); // Adidier regresa
 			virtual void LoadMesh() override;
 			virtual void Draw() override;
 			void ClearModel();
 			~Model();
 			void AddTexture(std::string path);
+			void AddTextureA(std::string path);
 		private:
 
 			void LoadNode(aiNode *node, const aiScene *scene);
 			void LoadMesh(aiMesh *mesh, const aiScene *scene);
-			void LoadMaterials(const aiScene *scene);
+			void LoadMaterials(const aiScene *scene, int i);
 
 			std::vector<Mesh*> meshList;
 			std::vector<Texture*> textureList;
