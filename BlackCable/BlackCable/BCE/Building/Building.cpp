@@ -24,8 +24,8 @@ void Building::Init()
 void Building::Draw()
 {
 	transform.SetTranslation(0,0,0);
-	transform.SetScale(.1f,.1f,.1f);
-	transform.SetRotation(0,0,0);
+	transform.SetScale(5.f,5.f,5.f);
+	transform.SetRotation(0,-1,0);
 	building->SetTransform(&transform);
 	building->Draw();
 }

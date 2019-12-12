@@ -2,7 +2,7 @@
 
 glm::vec3 Enemy::GetPosition()
 {
-	return spCollider->GetTranslation();
+	return spCollider->GetPosition();
 }
 float Enemy::GetRadius()
 {

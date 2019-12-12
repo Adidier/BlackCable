@@ -93,8 +93,8 @@
         <ConformanceMode>true</ConformanceMode>
         <AdditionalIncludeDirectories>..\ExternalLibs\std_image\include;..\ExternalLibs\glm;..\ExternalLibs\glfw-3.3.bin.WIN32\include\GLFW;..\ExternalLibs\glew-2.1.0\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       </ClCompile>
-      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\Assimp\x64\lib;..\ExternalLibs\glew-2.1.0\lib\Release\x64;..\ExternalLibs\freetype\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freetype.lib;glew32.lib;glfw3.lib;assimp-vc142-mtd.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\Assimp\x64\lib;..\ExternalLibs\glew-2.1.0\lib\Release\x64;..\ExternalLibs\freetype\win64;..\ExternalLibs\irrKlang-64bit-1.6.0\lib\Winx64-visualStudio;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;glew32.lib;glfw3.lib;assimp-vc142-mtd.lib;Opengl32.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\freetype\include;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -102,7 +102,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;..\ExternalLibs\freetype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;..\ExternalLibs\freetype\include;..\ExternalLibs\irrKlang-64bit-1.6.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <!--<Link>

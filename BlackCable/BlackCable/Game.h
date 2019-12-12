@@ -13,9 +13,7 @@
 #include "Player.h"
 #include "EnemyT4.h"
 #include "EnemyT5.h"
-#include "Enemy.h"
 #include "BCE/Building/Building.h"
-#include "BCE/Cajas/Cajas.h"
 #include <list>
 
 #include<vector>

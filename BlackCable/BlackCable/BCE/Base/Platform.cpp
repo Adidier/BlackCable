@@ -106,6 +106,7 @@ namespace BCE
 			glfwSetKeyCallback(mainWindow, HandleKeys);
 			glfwSetCursorPosCallback(mainWindow, HandleMousePosition);
 			glfwSetMouseButtonCallback(mainWindow, HandleMouseButton);
+
 		}
 		int Platform::GetWidth()
 		{

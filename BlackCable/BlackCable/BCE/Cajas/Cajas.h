@@ -3,6 +3,7 @@
 #include <glm.hpp>
 #include <gtc\matrix_transform.hpp>
 #include <map>
+#include "../Physics/SphereCollider.h"
 #include "../Graphic/Camera.h"
 #include "../Graphic/Model.h"
 #include "../Base/Platform.h"
@@ -16,8 +17,18 @@ class Cajas
 private:
 	Model* cajas;
 	Platform* platform;
+	SphereCollider* sphere;
 public:
 	Transform transform;
+	float GetRadiuas()
+	{
+		return sphere->GetRadius();
+	}
+
+	glm::vec3 GetPosition()
+	{
+		return sphere->GetPosition();
+	}
 	Cajas(glm::vec3 position);
 	~Cajas();
 	void Init();

@@ -5,7 +5,7 @@ Cajas::Cajas(glm::vec3 position)
 	this->platform = Platform::GetPtr();
 	cajas = nullptr;
 	transform.SetTranslation(position.x, 0, position.z);
-
+	sphere = new SphereCollider(5, transform.GetTranslation());
 }
 
 Cajas::~Cajas()

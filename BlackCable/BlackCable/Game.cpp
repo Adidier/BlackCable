@@ -3,8 +3,7 @@
 #include <glm.hpp>
 #include <gtc\matrix_transform.hpp>
 #include <gtc\type_ptr.hpp>
-
-
+#include "MainMenu.h"
 
 Game::Game()
 {
@@ -32,7 +31,7 @@ void Game::Init()
 #pragma region Carga de Modelos
 	//Jugador
 	player = new Player(glm::vec3(-130, 10, -130));
-	player->Init(&enemyPool);
+	player->Init(&enemyPool, &cajasPool);
 	
 	//Cubo
 	cube = new CubeModel();
@@ -45,6 +44,26 @@ void Game::Init()
 	//Edificio
 	building = new Building();
 	building->Init();
+	
+	auto caja = new Cajas(vec3(0, 10, 130));
+	auto caja2 = new Cajas(vec3(0, 10, -130));
+	auto caja3 = new Cajas(vec3(130, 10, 0));
+	auto caja4 = new Cajas(vec3(-130, 10, 0));
+
+	cajasPool.push_back(caja);
+	cajasPool.push_back(caja2);
+	cajasPool.push_back(caja3);
+	cajasPool.push_back(caja4);
+
+
+	//Carga de modelos de las cajas, aquí inician
+	std::list<Cajas*>::iterator it = cajasPool.begin();
+	while(it != cajasPool.end())
+	{
+		(*it)->Init();
+		it++;
+	}
+	
 
 	//Modelo de cajas
 	cajas = new Cajas(vec3(0, 0, -130));
@@ -89,10 +108,13 @@ void Game::Draw()
 		enemy->Draw();
 	}
 
-	//for(auto caja : cajasPool)
-	//{
-	//	cajas->Draw();
-	//}
+	//Etapa de dibujado de las cajas
+	std::list<Cajas*>::iterator it = cajasPool.begin();
+	while(it != cajasPool.end())
+	{
+		(*it)->Draw();
+		it++;
+	}
 	platform->RenderPresent();
 
 }
@@ -113,11 +135,6 @@ bool Game::Input(std::map<int, bool> keys)
 void Game::Update()
 {
 	int random = rand() % 2 + 1;
-	player->Update();
-	//glm::vec3 tvec3(0, 0, 0);
-	//auto caja = new Cajas(tvec3);
-	//caja->Init();
-	//cajasPool.push_back(caja);
 
 	if(enemyPool.size() < 10)
 	{
@@ -155,7 +172,7 @@ void Game::Update()
 		distance.y = distance.y / hyp;	//Divide la distancia entre la hipotenusa
 		distance.z = distance.z / hyp;	//Divide la distancia entre la hipotenusa
 
-		distance = distance / vec3(20, 0, 20);	//Dividir el resultado de la distancia entre 20
+		distance = distance / vec3(50, 0, 50);	//Dividir el resultado de la distancia entre 20
 		enemyVec.x += distance.x;//Sumar la nueva distancia a la distancia original
 		enemyVec.z += distance.z;//Sumar la nueva distancia a la distancia original
 
@@ -163,11 +180,12 @@ void Game::Update()
 		enemy->transform.SetTranslation(enemyVec.x, enemyVec.y, enemyVec.z);
 		enemy->Update();
 	}
+	player->Update();
 
-	for (auto enemy : enemyPool)
-	{
-		enemy->Update();
-	}
+	if(player->killed)
+		GameStateManager::getPtr()->SetState(new MainMenu());
+
+
 }
 
 void Game::Close()

@@ -29,7 +29,7 @@ void BCE::Graphics::MenuPlane::Draw()
 	glm::mat4 model(1);
 	if(transform != nullptr)
 	{
-		transform->SetTranslation(1.0f, 7, -3.f);
+		transform->SetTranslation(3.0f, -3, -1.5f);
 		transform->SetScale(2.0f, 5.0f, 4.0f);
 		transform->SetRotation(1.1f,5.0f, 1.2f);
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(transform->GetTransform()));
