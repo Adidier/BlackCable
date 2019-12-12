@@ -5,7 +5,7 @@ ISoundEngine* SoundEngine = createIrrKlangDevice();
 
 /*Obtenido de http://viclw17.github.io/2018/07/16/raytracing-ray-sphere-intersection/ */
 
-//Detección del enemigo por medio del ray cast
+//Detecciï¿½n del enemigo por medio del ray cast
 class ray
 {
 public:
@@ -42,6 +42,7 @@ Player::Player(glm::vec3 position)
 	offsetY = offset.y;
 }
 
+
 void Player::Init(std::list<Enemy*>* enemyPool, std::list<Cajas*>* boxPool)
 {
 	ammo = 10;
@@ -51,6 +52,7 @@ void Player::Init(std::list<Enemy*>* enemyPool, std::list<Cajas*>* boxPool)
 	weapon->AddTexture("ArmaUV.png");
 	spCollider = new SphereCollider(10, camera.getCameraPosition());
 	this->boxPool = boxPool;
+
 }
 
 void Player::MouseInput(int x, int y, bool leftbutton)
@@ -69,6 +71,7 @@ void Player::Input(const std::map<int, bool>& keys)
 void Player::Update()
 {
 	spCollider->SetTranslation(camera.getCameraPosition());
+
 	for(auto ene : *enemyPool)
 	{
 		if(spCollider->CheckCollision(ene->GetRadius(), ene->GetPosition()))

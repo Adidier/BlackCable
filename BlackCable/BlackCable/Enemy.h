@@ -27,8 +27,10 @@ protected:
 	Player* player;
 	SphereCollider* spCollider;
 public:
+
 	Transform transform;
 	glm::vec3 GetPosition();
+
 	float GetRadius();
 	virtual void Init() = 0;
 	virtual void Update() = 0;

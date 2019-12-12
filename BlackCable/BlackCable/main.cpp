@@ -14,11 +14,14 @@ int main(int argc, char* argv[])
 }
 
 // Menu 
-// Carga de imagenes o Texto
-// Game Shooter
+// Carga de imagenes o Texto *
+// Game Shooter 
 // 1 arma 3d (carga de modelos) (tarea)
-// 2 enemigos low poly (tarea)
-// mostrar daño
-// 1 arena props (tarea)
-// cajas de municiones
+// 2 enemigos low poly (tarea) 
+// mostrar daño *
+// disparar balas *
+// 1 arena props (tarea) 
+// cajas de municiones *
 // gameplay TB
+// musica *
+// JUEGO FUNCIONAL 

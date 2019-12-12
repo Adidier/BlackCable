@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="BCE\Base\Platform.cpp">
       <Filter>Src file</Filter>
+
     </ClCompile>
     <ClCompile Include="BCE\Cajas\Cajas.cpp">
       <Filter>BCE\Graphics</Filter>
@@ -94,6 +95,13 @@
     <ClCompile Include="BCE\Base\MenuPlanecpp.cpp">
       <Filter>Src file\Game\Main Menu</Filter>
     </ClCompile>
+    <ClCompile Include="BCE\Graphic\Text.cpp" />
+    <ClCompile Include="BCE\Physics\SphereCollider.cpp">
+      <Filter>BCE\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BCE\Base\Platform.h">
@@ -183,6 +191,10 @@
     <ClInclude Include="BCE\Base\MenuPlane.h">
       <Filter>Src file\Game\Main Menu</Filter>
     </ClInclude>
+    <ClInclude Include="BCE\Graphic\Text.h" />
+    <ClInclude Include="BCE\Physics\SphereCollider.h">
+      <Filter>BCE\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Default\default.frag">
@@ -212,6 +224,7 @@
     <None Include="Assets\Shaders\Default\Text-Shader.frag">
       <Filter>BCE\Shader</Filter>
     </None>
+
     <None Include="Assets\Shaders\Default\Text-Shader.vert">
       <Filter>BCE\Shader</Filter>
     </None>
@@ -244,5 +257,6 @@
     <Filter Include="Src file\Game\Main Menu">
       <UniqueIdentifier>{0a6f98ca-149a-4afc-9fe3-b50cf6427670}</UniqueIdentifier>
     </Filter>
+
   </ItemGroup>
 </Project>

@@ -16,8 +16,10 @@ void EnemyT4::Update()
 void EnemyT4::Init()
 {
 	weapon = new Model();
+
 	weapon->LoadModel("Assets/Models/Enemigo.obj", 0);
 	weapon->AddTexture("EnemigoUV.png");
+
 	spCollider = new SphereCollider(10, transform.GetTranslation());
 }
 

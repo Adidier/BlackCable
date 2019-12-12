@@ -11,6 +11,7 @@
 #include "BCE/Physics/SphereCollider.h"
 #include <list>
 #include "Enemy.h"
+
 #include "BCE/Cajas/Cajas.h"
 
 
@@ -32,9 +33,11 @@ private:
 	Transform transform;
 	float distanceOffset;
 	float offsetY;
+
 	SphereCollider* spCollider;
 	std::list<Enemy*>* enemyPool;
 	std::list<Cajas*>* boxPool;
+
 public:
 	glm::vec3 GetPlayerPosition()
 	{
@@ -50,12 +53,14 @@ public:
 	}
 	bool killed;
 	Player(glm::vec3 position);
+
 	void Init(std::list<Enemy*>* enemyPool, std::list<Cajas*>* boxPool);
 	void Input(const std::map<int, bool>& keys);
 	void MouseInput(int x, int y, bool leftbutton);
 	void Draw();
 	void Update();
 	bool Shoot();
+
 private:
 	bool Detection();
 };

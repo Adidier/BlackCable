@@ -24,7 +24,7 @@ void Game::Init()
 	this->platform = Platform::GetPtr();
 	this->manager = GameStateManager::getPtr();
 	shaderManager = ShaderManager::getPtr();
-	//Se añaden los shaders
+	//Se aï¿½aden los shaders
 	shaderManager->LoadShaders("phong", "Assets/Shaders/Default/phong-shader.vert", "Assets/Shaders/Default/phong-shader.frag");
 	shaderManager->LoadShaders("gouraud", "Assets/Shaders/Default/gouraud-shader.vert", "Assets/Shaders/Default/gouraud-shader.frag");
 
@@ -34,12 +34,14 @@ void Game::Init()
 	player->Init(&enemyPool, &cajasPool);
 	
 	//Cubo
+
 	cube = new CubeModel();
 	cube->Init();
 	
 	//Plano
 	plane = new PlaneModel();
 	plane->Init();
+
 
 	//Edificio
 	building = new Building();
@@ -56,7 +58,7 @@ void Game::Init()
 	cajasPool.push_back(caja4);
 
 
-	//Carga de modelos de las cajas, aquí inician
+	//Carga de modelos de las cajas, aquï¿½ inician
 	std::list<Cajas*>::iterator it = cajasPool.begin();
 	while(it != cajasPool.end())
 	{
@@ -81,6 +83,7 @@ void Game::Init()
 		skyboxFaces.push_back("Assets/Textures/Skybox/cupertin-lake_ft.tga");
 		skybox = Skybox(skyboxFaces);
 #pragma endregion Carga de la SkyBox
+
 
 }
 
@@ -134,6 +137,7 @@ bool Game::Input(std::map<int, bool> keys)
 
 void Game::Update()
 {
+
 	int random = rand() % 2 + 1;
 
 	if(enemyPool.size() < 10)
@@ -163,8 +167,8 @@ void Game::Update()
 	for(auto enemy : enemyPool)
 	{
 		//enemy->FollowPlayer(*enemy, player->GetPlayerPosition());
-		glm::vec3 playerVec = player->GetPlayerPosition();	//Guarda la posición del jugador
-		glm::vec3 enemyVec = enemy->GetPosition();			//Guarda la posición del enemigo
+		glm::vec3 playerVec = player->GetPlayerPosition();	//Guarda la posiciï¿½n del jugador
+		glm::vec3 enemyVec = enemy->GetPosition();			//Guarda la posiciï¿½n del enemigo
 		glm::vec3 distance = playerVec - enemyVec;			//Resta las dos distancias anterior
 
 		float hyp = sqrt(pow(distance.x, 2) + pow(distance.y, 2) + pow(distance.z, 2));	//Consigue el valor de la hipotenusa
@@ -184,6 +188,7 @@ void Game::Update()
 
 	if(player->killed)
 		GameStateManager::getPtr()->SetState(new MainMenu());
+
 
 
 }
