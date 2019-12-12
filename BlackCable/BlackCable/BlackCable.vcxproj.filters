@@ -1,246 +1,248 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="BCE">
-      <UniqueIdentifier>{0039e17c-9ad2-445f-9baf-755fc38d0879}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{2317a8ee-ecfa-4357-ba84-532eb69df2b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de recursos\Shaders">
-      <UniqueIdentifier>{4078b757-b253-4da4-9952-76e4371b61a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BCE\Base">
-      <UniqueIdentifier>{002cd6da-8200-457c-8440-dd8b0ec643ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BCE\Graphic">
-      <UniqueIdentifier>{b7669a80-1a25-4ac4-b2fb-80b7e996694d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BCE\Lights">
-      <UniqueIdentifier>{4412ed54-6b79-43a8-8de9-e7b275482844}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de recursos\Shaders\Default">
-      <UniqueIdentifier>{896ca5f9-ecf7-4eb0-bfbb-4ef63b01cb23}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Enemy">
-      <UniqueIdentifier>{7d0db8c6-3dbe-45d9-956b-dde1bad8dd3c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BCE\Building">
-      <UniqueIdentifier>{8fde0ea7-83f9-40d1-ac49-df4cb6fc9ee7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BCE\Cajas">
-      <UniqueIdentifier>{fc57cf7a-85d2-4230-8536-01e3584b1c26}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Base\GameState.cpp">
-      <Filter>BCE\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Base\GameStateManager.cpp">
-      <Filter>BCE\Base</Filter>
-    </ClCompile>
     <ClCompile Include="BCE\Base\Platform.cpp">
-      <Filter>BCE\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Base\ShaderManager.cpp">
-      <Filter>BCE\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Base\Transform.cpp">
-      <Filter>BCE\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Camera.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\CubeModel.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Material.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Mesh.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\PlaneModel.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Shader.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Texture.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Lights\DirectionalLight.cpp">
-      <Filter>BCE\Lights</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Lights\Light.cpp">
-      <Filter>BCE\Lights</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Lights\PointLight.cpp">
-      <Filter>BCE\Lights</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\BaseModel.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Model.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Skybox.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyT4.cpp">
-
-      <Filter>Game\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Graphic\Text.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\BlackCable\BlackCable\BlackCable\BCE\Graphic\Text.cpp">
-      <Filter>BCE\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyT5.cpp">
-      <Filter>Game\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="BCE\Building\Building.cpp">
-      <Filter>BCE\Building</Filter>
+      <Filter>Src file</Filter>
     </ClCompile>
     <ClCompile Include="BCE\Cajas\Cajas.cpp">
-      <Filter>BCE\Cajas</Filter>
-      
-      <Filter>Game</Filter>
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Camera.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\CubeModel.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\BaseModel.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Building\Building.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Model.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Text.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\BlackCable\BlackCable\BlackCable\BCE\Graphic\Text.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Texture.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\ShaderManager.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Skybox.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Shader.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\PlaneModel.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Material.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Graphic\Mesh.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\DirectionalLight.cpp">
+      <Filter>BCE\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\Light.cpp">
+      <Filter>BCE\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Lights\PointLight.cpp">
+      <Filter>BCE\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Src file</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Src file\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\GameState.cpp">
+      <Filter>Src file\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\GameStateManager.cpp">
+      <Filter>Src file\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyT4.cpp">
+      <Filter>Src file\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="EnemyT5.cpp">
-      <Filter>Game</Filter>
-
+      <Filter>Src file\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Src file</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Physics\SphereCollider.cpp">
+      <Filter>BCE\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\Transform.cpp">
+      <Filter>BCE\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Src file\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Src file\Game\Main Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="BCE\Base\MenuPlanecpp.cpp">
+      <Filter>Src file\Game\Main Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BCE\Base\GameState.h">
-      <Filter>BCE\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Base\GameStateManager.h">
-      <Filter>BCE\Base</Filter>
-    </ClInclude>
     <ClInclude Include="BCE\Base\Platform.h">
-      <Filter>BCE\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Base\ShaderManager.h">
-      <Filter>BCE\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Base\Transform.h">
-      <Filter>BCE\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Camera.h">
-      <Filter>BCE\Graphic</Filter>
+      <Filter>Src file</Filter>
     </ClInclude>
     <ClInclude Include="BCE\Graphic\CubeModel.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Material.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Mesh.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\PlaneModel.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Shader.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Texture.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Lights\DirectionalLight.h">
-      <Filter>BCE\Lights</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Lights\Light.h">
-      <Filter>BCE\Lights</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Lights\PointLight.h">
-      <Filter>BCE\Lights</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\BaseModel.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Model.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Skybox.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-
-        <ClInclude Include="Enemy.h">
-      <Filter>Game\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyT4.h">
-      <Filter>Game\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Graphic\Text.h">
-      <Filter>BCE\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyT5.h">
-      <Filter>Game\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="BCE\Building\Building.h">
-      <Filter>BCE\Building</Filter>
+      <Filter>BCE\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="BCE\Cajas\Cajas.h">
-      <Filter>BCE\Cajas</Filter>
-    
-    <ClInclude Include="EnemyT4.h">
-      <Filter>Game</Filter>
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Camera.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\BaseModel.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Building\Building.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Model.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Text.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Texture.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\ShaderManager.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Skybox.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Shader.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\PlaneModel.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Material.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Graphic\Mesh.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\DirectionalLight.h">
+      <Filter>BCE\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\Light.h">
+      <Filter>BCE\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Lights\PointLight.h">
+      <Filter>BCE\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Src file</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Src file\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\GameState.h">
+      <Filter>Src file\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\GameStateManager.h">
+      <Filter>Src file\Game</Filter>
     </ClInclude>
     <ClInclude Include="EnemyT5.h">
-      <Filter>Game</Filter>
+      <Filter>Src file\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>Game</Filter>
-
+      <Filter>Src file\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyT4.h">
+      <Filter>Src file\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Physics\SphereCollider.h">
+      <Filter>BCE\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\Transform.h">
+      <Filter>BCE\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Src file\Game\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="BCE\Base\MenuPlane.h">
+      <Filter>Src file\Game\Main Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Default\default.frag">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\default.vert">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\gouraud-shader.frag">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\gouraud-shader.vert">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\phong-shader.frag">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\phong-shader.vert">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\skybox.frag">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
     <None Include="Assets\Shaders\Default\skybox.vert">
-      <Filter>Archivos de recursos\Shaders\Default</Filter>
+      <Filter>BCE\Shader</Filter>
     </None>
+    <None Include="Assets\Shaders\Default\Text-Shader.frag">
+      <Filter>BCE\Shader</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\Text-Shader.vert">
+      <Filter>BCE\Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="BCE">
+      <UniqueIdentifier>{f2c0613c-5957-43c4-928d-2c440298a7e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src file">
+      <UniqueIdentifier>{4fd8b718-d8f7-4a08-9da9-0affdefb495a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Graphics">
+      <UniqueIdentifier>{38c718ea-44d0-4ed9-82d9-24b004982a3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Light">
+      <UniqueIdentifier>{38f7f8e0-7003-43b7-98fd-4f5248c5a17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src file\Game">
+      <UniqueIdentifier>{5fcf4176-9491-4c47-ad86-fb011e09094c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src file\Enemy">
+      <UniqueIdentifier>{f00e011e-4c75-416c-90ce-d9e203a03208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Shader">
+      <UniqueIdentifier>{12ba8815-e3c0-4b6e-a367-d2c6277d61e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BCE\Physics">
+      <UniqueIdentifier>{486ec4f4-109a-4613-b795-352b017d5d7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src file\Game\Main Menu">
+      <UniqueIdentifier>{0a6f98ca-149a-4afc-9fe3-b50cf6427670}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

@@ -8,10 +8,13 @@
 #include "BCE/Graphic/Model.h"
 #include "BCE/Base/Platform.h"
 #include "BCE/Base/ShaderManager.h"
-#include "Player.h"
+#include "BCE/Physics/SphereCollider.h"
+
 
 using namespace BCE::Base;
 using namespace BCE::Graphics;
+
+class Player;
 
 class Enemy
 {
@@ -19,28 +22,17 @@ protected:
 	int life;
 	int ammo;
 	float speed;
-
-  	Model* weapon;
+	Model* weapon;
 	Platform* platform;
 	Player* player;
+	SphereCollider* spCollider;
 public:
 	Transform transform;
+	glm::vec3 GetPosition();
+	float GetRadius();
 	virtual void Init() = 0;
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
-	virtual glm::vec3 GetPosition() = 0;
-	virtual void FollowPlayer(Enemy&, glm::vec3 playerVector) = 0;
-  
-  
-	Model *weapon;
-	Platform* platform;
-	Transform transform;
-	Player* player;
-public:
-	virtual void Init() = 0;
-	virtual void Update()=0;
-	virtual void Draw() = 0;
-
 private:
 	virtual void Shoot() = 0;
 };

@@ -23,9 +23,9 @@ void Building::Init()
 
 void Building::Draw()
 {
-	transform.SetTranslation(glm::vec3(0.0f,00.0f, 0.0f));
-	transform.SetScale(glm::vec3(0.1f, 0.1f, 0.1f));
-	transform.SetRotation(glm::vec3(0, 0, 0));
+	transform.SetTranslation(0,0,0);
+	transform.SetScale(.1f,.1f,.1f);
+	transform.SetRotation(0,0,0);
 	building->SetTransform(&transform);
 	building->Draw();
 }

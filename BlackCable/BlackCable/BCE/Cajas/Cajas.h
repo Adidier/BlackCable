@@ -1,5 +1,5 @@
 #ifndef CAJAS_H
-#define CAJAS_HA
+#define CAJAS_H
 #include <glm.hpp>
 #include <gtc\matrix_transform.hpp>
 #include <map>

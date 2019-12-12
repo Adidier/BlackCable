@@ -10,17 +10,10 @@ namespace BCE
 		{
 		public:
 			void SetTranslation(float x, float y, float z);
-			void SetTranslation(glm::vec3 vector);
 			void SetRotation(float x, float y, float z);
-			void SetRotation(glm::vec3 setRotation);
 			void SetScale(float x, float y, float z);
-			void SetScale(glm::vec3 vectorScale);
+			glm::vec3 GetTranslation();
 			glm::mat4 GetTransform();
-			glm::vec3 GetTranslation()
-			{
-				return _translation;
-			}
-			
 			Transform();
 		private:
 			glm::vec3 _translation;

@@ -97,15 +97,12 @@
       <AdditionalDependencies>freetype.lib;glew32.lib;glfw3.lib;assimp-vc142-mtd.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
-
       <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\freetype\include;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\ExternalLibs\glfw-3.3.bin.WIN32\include;..\ExternalLibs\glew-2.1.0\include;..\ExternalLibs\glm\glm;..\ExternalLibs\std_image\include;..\ExternalLibs\Assimp\include;..\ExternalLibs\freetype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-
     </ClCompile>
   </ItemDefinitionGroup>
   <!--<Link>
@@ -127,12 +124,6 @@
       <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </ItemDefinitionGroup>
    </Link>-->
-
-  <AdditionalLibraryDirectories>..\ExternalLibs\glfw-3.3.bin.WIN64\lib-vc2019;..\ExternalLibs\glew-2.1.0\lib\Release\x64;..\ExternalLibs\Assimp\x64\lib;..\ExternalLibs\freetype\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;Opengl32.lib;assimp-vc142-mtd.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -167,6 +158,7 @@
     <ClCompile Include="..\..\..\..\BlackCable\BlackCable\BlackCable\BCE\Graphic\Text.cpp" />
     <ClCompile Include="BCE\Base\GameState.cpp" />
     <ClCompile Include="BCE\Base\GameStateManager.cpp" />
+    <ClCompile Include="BCE\Base\MenuPlanecpp.cpp" />
     <ClCompile Include="BCE\Base\Platform.cpp" />
     <ClCompile Include="BCE\Base\ShaderManager.cpp" />
     <ClCompile Include="BCE\Base\Transform.cpp" />
@@ -186,15 +178,19 @@
     <ClCompile Include="BCE\Lights\DirectionalLight.cpp" />
     <ClCompile Include="BCE\Lights\Light.cpp" />
     <ClCompile Include="BCE\Lights\PointLight.cpp" />
+    <ClCompile Include="BCE\Physics\SphereCollider.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyT4.cpp" />
     <ClCompile Include="EnemyT5.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BCE\Base\GameState.h" />
     <ClInclude Include="BCE\Base\GameStateManager.h" />
+    <ClInclude Include="BCE\Base\MenuPlane.h" />
     <ClInclude Include="BCE\Base\Platform.h" />
     <ClInclude Include="BCE\Base\ShaderManager.h" />
     <ClInclude Include="BCE\Base\Transform.h" />
@@ -214,10 +210,12 @@
     <ClInclude Include="BCE\Lights\DirectionalLight.h" />
     <ClInclude Include="BCE\Lights\Light.h" />
     <ClInclude Include="BCE\Lights\PointLight.h" />
+    <ClInclude Include="BCE\Physics\SphereCollider.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyT4.h" />
     <ClInclude Include="EnemyT5.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>

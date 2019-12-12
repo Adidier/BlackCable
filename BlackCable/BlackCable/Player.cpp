@@ -1,37 +1,58 @@
 #include "Player.h"
 
+/*Obtenido de http://viclw17.github.io/2018/07/16/raytracing-ray-sphere-intersection/ */
+
+//Detección del enemigo por medio del ray cast
+class ray
+{
+public:
+	ray() {}
+	ray(const glm::vec3& a, const glm::vec3& b) { A = a; B = b; }
+	glm::vec3 orgin() const { return A; }
+	glm::vec3 direction() const { return B; }
+	glm::vec3 point_at_parameter(float t) const { return A + t * B; }
+
+	glm::vec3 A;
+	glm::vec3 B;
+};
+
+bool hit_sphere(const glm::vec3& center, float radius, const ray& r)
+{
+	glm::vec3 oc = r.orgin() - center;
+	float a = dot(r.direction(), r.direction());
+	float b = 2.0 * dot(oc, r.direction());
+	float c = dot(oc, oc) - radius * radius;
+	float discriminant = b * b - 4 * a * c;
+	return (discriminant > 0);
+}
+
+
 Player::Player(glm::vec3 position)
 {
 	this->platform = Platform::GetPtr();
-	camera = Camera(glm::vec3(-120.0f, 10.0f, -120.0f),glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 55.0f, 0.1f);
-	ShaderManager *shaderManager = ShaderManager::getPtr();
+	camera = Camera(position, glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 55.0f, 0.1f);
+	ShaderManager* shaderManager = ShaderManager::getPtr();
 	shaderManager->initShader(&camera);
-
 	glm::vec3 offset = glm::vec3(3, -1, 0);
 	distanceOffset = glm::length(glm::vec3(offset.x, 0, offset.y));
 	offsetY = offset.y;
 }
 
-void Player::Init()
+void Player::Init(std::list<Enemy*>* enemyPool)
 {
+	this->enemyPool = enemyPool;
 	weapon = new Model();
-
-
-	weapon->LoadModel("Assets/Models/Arma_Jugador.obj", 0);
+	weapon->LoadModel("Assets/Models/Arma_Jugador.obj",0);
 	weapon->AddTexture("ArmaUV.png");
-	weapon->AddTexture("Arma_Normal.png");
-	
-}
-
-void Player::Update()
-{
-
+	spCollider = new SphereCollider(10, camera.getCameraPosition());
 }
 
 void Player::MouseInput(int x, int y, bool leftbutton)
 {
-	if (x != -1 || y != -1)
+	if(x != -1 || y != -1)
 		camera.mouseControl(x, y);
+
+	
 }
 
 void Player::Input(const std::map<int, bool>& keys)
@@ -39,29 +60,65 @@ void Player::Input(const std::map<int, bool>& keys)
 	camera.keyControl(keys, platform->GetDeltaTime());
 }
 
+void Player::Update()
+{
+	spCollider->SetTranslation(camera.getCameraPosition());
+	for(auto ene : *enemyPool)
+	{
+		if(spCollider->CheckCollision(ene->GetRadius(), ene->GetPosition()))
+		{
+			printf("Muerto\n");
+
+		}
+
+	}
+	Shoot();
+
+}
+
+void Player::Shoot()
+{	
+	int state = glfwGetMouseButton(platform->GetWindow(), GLFW_MOUSE_BUTTON_LEFT);
+	if(state == GLFW_PRESS)
+	{
+		glm::vec3 position = camera.getCameraPosition();
+		glm::vec3 rotation = camera.getCameraRotation();
+
+		float angleOffset = glm::atan(rotation.x, rotation.z);
+		glm::vec3 offset = glm::vec3(-1, -1, 0);
+
+		distanceOffset = glm::length(glm::vec3(offset.x, 0, offset.y));
+
+		glm::vec3 origin = glm::normalize(glm::vec3(position.x + ((distanceOffset)*rotation.x), 
+													position.y, position.z + ((distanceOffset)*rotation.z)));
+		ray ray1 = ray(glm::vec3(0, 0, 0), origin);
+
+		for(auto ene : *enemyPool)
+		{
+			if(hit_sphere(ene->GetPosition(), ene->GetRadius(), ray1))
+			{
+				printf("Choco!\n");
+			}
+		}
+
+	}
+}
+
+
+
+
 void Player::Draw()
 {
 	glm::vec3 position = camera.getCameraPosition();
+	glm::vec3 rotation = camera.getCameraRotation();
 
-	transform.SetTranslation(position.x +.12, position.y - 0.1, position.z +.1);
-	transform.SetScale(0.1f, 0.1f, 0.1f);
-	transform.SetRotation(0,0,0);
-	
+	float angleOffset = glm::atan(rotation.x, rotation.z);
+
+	transform.SetTranslation(0, 0, 0);
+	transform.SetScale(1.1f, 1.1f, 1.11f);
+	transform.SetRotation(0, angleOffset - 1.57f, 0);
+	transform.SetTranslation(position.x + (distanceOffset * rotation.x), position.y + offsetY, position.z + (distanceOffset * rotation.z));
 	weapon->SetTransform(&transform);
 	weapon->Draw();
-
-	//glm::vec3 position = camera.getCameraPosition();
-	//glm::vec3 rotation = camera.GetCameraRotation();
-
-	//float angleOffset = glm::atan(rotation.x, rotation.z);
-	//transform.SetScale(1.0f, 1.0f, 1.0f);
-	//transform.SetRotation(0, angleOffset- 1.6, 0);
-	//transform.SetTranslation(position.x + (rotation.x), position.y + offsetY, (position.z + 0.6) + ( rotation.z));
-	//weapon->SetTransform(&transform);
-	//weapon->Draw();
 }
 
-void Player::Shoot(int x, int y)
-{
-
-}

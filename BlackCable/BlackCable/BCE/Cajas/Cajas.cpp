@@ -25,7 +25,7 @@ void Cajas::Draw()
 {
 
 	transform.SetScale(0.5f,0.5f, 0.5f);
-	transform.SetRotation(glm::vec3(0, 0, 0));
+	transform.SetRotation(0,0,0);
 	cajas->SetTransform(&transform);
 	cajas->Draw();
 }

@@ -25,23 +25,32 @@ void Game::Init()
 	this->platform = Platform::GetPtr();
 	this->manager = GameStateManager::getPtr();
 	shaderManager = ShaderManager::getPtr();
+	//Se añaden los shaders
 	shaderManager->LoadShaders("phong", "Assets/Shaders/Default/phong-shader.vert", "Assets/Shaders/Default/phong-shader.frag");
 	shaderManager->LoadShaders("gouraud", "Assets/Shaders/Default/gouraud-shader.vert", "Assets/Shaders/Default/gouraud-shader.frag");
 
 #pragma region Carga de Modelos
-	player = new Player(glm::vec3(0, 0, 0));
-	player->Init();
+	//Jugador
+	player = new Player(glm::vec3(-130, 10, -130));
+	player->Init(&enemyPool);
+	
+	//Cubo
 	cube = new CubeModel();
 	cube->Init();
+	
+	//Plano
 	plane = new PlaneModel();
 	plane->Init();
 
+	//Edificio
 	building = new Building();
 	building->Init();
 
-	cajas = new Cajas(vec3(0, 0, 0));
+	//Modelo de cajas
+	cajas = new Cajas(vec3(0, 0, -130));
 	cajas->Init();
-#pragma endregion
+#pragma endregion	Carga de todos los modelos
+
 	
 #pragma region SkyBox
 		std::vector<std::string> skyboxFaces;
@@ -52,12 +61,13 @@ void Game::Init()
 		skyboxFaces.push_back("Assets/Textures/Skybox/cupertin-lake_bk.tga");
 		skyboxFaces.push_back("Assets/Textures/Skybox/cupertin-lake_ft.tga");
 		skybox = Skybox(skyboxFaces);
-#pragma endregion
+#pragma endregion Carga de la SkyBox
 
 }
 
 void Game::Draw()
 {
+	//Se dibujan todos los modelos, activando y desactivando diferentes tipos de shaders
 	platform->RenderClear();
 	skybox.Draw(shaderManager->GetViewMatrix(), shaderManager->GetProjectionMatrix());
 
@@ -68,8 +78,7 @@ void Game::Draw()
 	shaderManager->Activate("phong");
 	shaderManager->draw();
 	plane->Draw();
-  
-	//shaderManager->Activate("phong");
+
 	shaderManager->draw();
 	player->Draw();
 	building->Draw();
@@ -103,7 +112,7 @@ bool Game::Input(std::map<int, bool> keys)
 
 void Game::Update()
 {
-  
+	int random = rand() % 2 + 1;
 	player->Update();
 	//glm::vec3 tvec3(0, 0, 0);
 	//auto caja = new Cajas(tvec3);
@@ -112,20 +121,20 @@ void Game::Update()
 
 	if(enemyPool.size() < 10)
 	{
-		if(rand() % 100 < 1)
+		if(random == 2)
 		{
 			int dir = -1;
-			if(rand() % 100 > 50)
+			if(random == 2)
 				dir = 1;
 			auto enemy = new EnemyT4(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
 			enemy->Init();
 			enemyPool.push_back(enemy);
 		}
 
-		if(rand() % 100 < 1)
+		if(random == 1)
 		{
 			int dir = -1;
-			if(rand() % 100 > 50)
+			if(random == 1)
 				dir = 1;
 			auto enemy = new EnemyT5(glm::vec3(rand() % 100 * dir, 0, rand() % 100 * dir), player);
 			enemy->Init();
@@ -137,33 +146,21 @@ void Game::Update()
 	for(auto enemy : enemyPool)
 	{
 		//enemy->FollowPlayer(*enemy, player->GetPlayerPosition());
-		glm::vec3 playerVec = player->GetPlayerPosition();
-		glm::vec3 enemyVec = enemy->GetPosition();
-		glm::vec3 distance = playerVec - enemyVec;
+		glm::vec3 playerVec = player->GetPlayerPosition();	//Guarda la posición del jugador
+		glm::vec3 enemyVec = enemy->GetPosition();			//Guarda la posición del enemigo
+		glm::vec3 distance = playerVec - enemyVec;			//Resta las dos distancias anterior
 
-		float hyp = sqrt(pow(distance.x, 2) + pow(distance.y, 2) + pow(distance.z, 2));
-		distance.x = distance.x / hyp;
-		distance.y = distance.y / hyp;
-		distance.z = distance.z / hyp;
+		float hyp = sqrt(pow(distance.x, 2) + pow(distance.y, 2) + pow(distance.z, 2));	//Consigue el valor de la hipotenusa
+		distance.x = distance.x / hyp;	//Divide la distancia entre la hipotenusa
+		distance.y = distance.y / hyp;	//Divide la distancia entre la hipotenusa
+		distance.z = distance.z / hyp;	//Divide la distancia entre la hipotenusa
 
-		glm::vec3 newDistance = enemyVec;
-		float y = player->GetPlayerPosition().y;
-	
-		if(player->GetPlayerPosition().y >  y)
-		{
-			distance = distance / vec3(50, 50, 50);
-			newDistance.x += distance.x;
-			newDistance.y += distance.y;
-			newDistance.z += distance.z;
-		} else
-		{
-			distance = distance / vec3(50, 0, 50);
-			newDistance.x += distance.x;
-			newDistance.z += distance.z;
-		}
+		distance = distance / vec3(20, 0, 20);	//Dividir el resultado de la distancia entre 20
+		enemyVec.x += distance.x;//Sumar la nueva distancia a la distancia original
+		enemyVec.z += distance.z;//Sumar la nueva distancia a la distancia original
 
 
-		enemy->transform.SetTranslation(newDistance);
+		enemy->transform.SetTranslation(enemyVec.x, enemyVec.y, enemyVec.z);
 		enemy->Update();
 	}
 
