@@ -1,6 +1,7 @@
 #include "EnemyT5.h"
+#include "EnemyT5.h"
 
-EnemyT5::EnemyT5(glm::vec3 position, Player *player)
+EnemyT5::EnemyT5(glm::vec3 position, Player* player)
 {
 	this->player = player;
 	this->platform = Platform::GetPtr();
@@ -15,8 +16,10 @@ void EnemyT5::Update()
 void EnemyT5::Init()
 {
 	weapon = new Model();
-	weapon->LoadModel("Assets/Models/Enemy2.obj");
-	weapon->AddTexture("Weapon_UV.png");
+
+	weapon->LoadModel("Assets/Models/Enemigo_2.obj", 0);
+	weapon->AddTexture("Enemigo_2_UV.png");
+
 	spCollider = new SphereCollider(10, transform.GetTranslation());
 }
 

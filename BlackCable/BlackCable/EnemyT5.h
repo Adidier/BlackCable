@@ -21,6 +21,9 @@ public:
 	void Init();
 	void Update();
 	void Draw();
+	glm::vec3 GetPosition();
+	void FollowPlayer(Enemy& enemy, glm::vec3 playerPosition);
+
 private:
 	void Shoot();
 };

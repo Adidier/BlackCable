@@ -1,8 +1,9 @@
 #include "Enemy.h"
 
-glm::vec3 Enemy::GetTranslation()
+glm::vec3 Enemy::GetPosition()
 {
-	return spCollider->GetTranslation();
+	return spCollider->GetPosition();
+
 }
 float Enemy::GetRadius()
 {

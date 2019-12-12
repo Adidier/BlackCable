@@ -8,7 +8,9 @@ class SphereCollider
 	public:
 		SphereCollider(float radius, glm::vec3 translation);
 		void SetTranslation(glm::vec3 translation);
-		glm::vec3 GetTranslation();
+
+		glm::vec3 GetPosition();
+
 		float GetRadius();
 
 		bool CheckCollision(float radius, glm::vec3 translation);

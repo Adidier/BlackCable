@@ -17,7 +17,9 @@ bool SphereCollider::CheckCollision(float radius, glm::vec3 translation)
 	return dist < (radius + this->radius) ? true : false;
 }
 
-glm::vec3 SphereCollider::GetTranslation()
+
+glm::vec3 SphereCollider::GetPosition()
+
 {
 	return this->_translation;
 }

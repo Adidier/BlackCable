@@ -13,13 +13,14 @@
 #include "Player.h"
 #include "EnemyT4.h"
 #include "EnemyT5.h"
-#include "Enemy.h"
+#include "BCE/Building/Building.h"
 #include <list>
 
 #include<vector>
 using namespace BCE::Base;
 using namespace BCE::Lights;
 using namespace BCE::Graphics;
+using glm::vec3;
 class Game : public GameState
 {
 private:
@@ -27,12 +28,15 @@ private:
 	GameStateManager* manager;
 	ShaderManager* shaderManager;
 	Player* player;
-	CubeModel *cube;
+	CubeModel* cube;
 	PlaneModel* plane;
-	Model *enemy;
+	Model* enemy;
 	Text text;
 	Skybox skybox;
-	std::list<Enemy *> enemyPool;
+	Building* building;
+	Cajas* cajas;
+	std::list<Cajas*> cajasPool;
+	std::list<Enemy*> enemyPool;
 
 
 public:
@@ -47,3 +51,4 @@ public:
 	void Close() override;
 
 };
+	

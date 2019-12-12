@@ -70,6 +70,7 @@ namespace BCE
 			// Create Viewport
 			glViewport(0, 0, bufferWidth, bufferHeight);
 		}
+		
 		Platform::~Platform()
 		{
 			glfwDestroyWindow(mainWindow);
@@ -105,6 +106,7 @@ namespace BCE
 			glfwSetKeyCallback(mainWindow, HandleKeys);
 			glfwSetCursorPosCallback(mainWindow, HandleMousePosition);
 			glfwSetMouseButtonCallback(mainWindow, HandleMouseButton);
+
 		}
 		int Platform::GetWidth()
 		{
@@ -120,7 +122,7 @@ namespace BCE
 		{
 			if (ptr == nullptr)
 			{
-				ptr = new Platform("THE GAME", 1920, 1080);
+      ptr = new Platform("THE GAME", 800, 800);
 			}
 			else
 			{

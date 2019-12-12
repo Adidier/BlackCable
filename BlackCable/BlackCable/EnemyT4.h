@@ -17,13 +17,18 @@ using namespace BCE::Graphics;
 class EnemyT4 : public Enemy
 {
 public:
-	EnemyT4(glm::vec3 position, Player *player);
+
+	EnemyT4(glm::vec3 position, Player* player);
 	void Init();
 	void Update();
 	void Draw();
+	glm::vec3 GetPosition();
+	void FollowPlayer(Enemy& enemy, glm::vec3 playerVector);
+
 private:
 	void Shoot();
 };
+
 
 #endif // ! 
 

@@ -22,20 +22,23 @@ protected:
 	int life;
 	int ammo;
 	float speed;
-	Model *weapon;
+	Model* weapon;
 	Platform* platform;
-	Transform transform;
 	Player* player;
 	SphereCollider* spCollider;
 public:
-	glm::vec3 GetTranslation();
+
+	Transform transform;
+	glm::vec3 GetPosition();
+
 	float GetRadius();
 	virtual void Init() = 0;
-	virtual void Update()=0;
+	virtual void Update() = 0;
 	virtual void Draw() = 0;
 private:
 	virtual void Shoot() = 0;
 };
+
 
 #endif // ! 
 

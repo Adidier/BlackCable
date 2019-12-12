@@ -26,22 +26,22 @@ namespace BCE
 		{
 			GLfloat velocity = moveSpeed * deltaTime;
 
-			if (keys[GLFW_KEY_W])
+			if(keys[GLFW_KEY_W])
 			{
 				position += front * velocity;
 			}
 
-			if (keys[GLFW_KEY_S])
+			if(keys[GLFW_KEY_S])
 			{
 				position -= front * velocity;
 			}
 
-			if (keys[GLFW_KEY_A])
+			if(keys[GLFW_KEY_A])
 			{
 				position -= right * velocity;
 			}
 
-			if (keys[GLFW_KEY_D])
+			if(keys[GLFW_KEY_D])
 			{
 				position += right * velocity;
 			}
@@ -60,7 +60,8 @@ namespace BCE
 
 		void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 		{
-			if (firstMove) {
+			if(firstMove)
+			{
 				prevXPos = xChange;
 				prevYPos = yChange;
 				firstMove = false;
@@ -78,12 +79,12 @@ namespace BCE
 			yaw += xoffset;
 			pitch -= yoffset;
 
-			if (pitch > 89.0f)
+			if(pitch > 89.0f)
 			{
 				pitch = 89.0f;
 			}
 
-			if (pitch < -89.0f)
+			if(pitch < -89.0f)
 			{
 				pitch = -89.0f;
 			}
