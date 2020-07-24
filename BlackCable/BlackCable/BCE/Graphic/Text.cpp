@@ -7,6 +7,7 @@ namespace BCE
 
 		Text::Text()
 		{
+			//hola
 			// Shader Setup
 			shaderManager = ShaderManager::getPtr();
 			shaderManager->LoadShaders("Text", "Assets/Shaders/Default/Text-Shader.vert", "Assets/Shaders/Default/Text-Shader.frag");
