@@ -180,6 +180,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyT4.h" />
     <ClInclude Include="EnemyT5.h" />
+    <ClInclude Include="ft2build.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>

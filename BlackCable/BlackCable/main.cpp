@@ -2,13 +2,15 @@
 #include "Game.h"
 #include <time.h>
 
-int main(int argc, char* argv[])
-{
-	srand(time(0));
-	auto gameStateManager = GameStateManager::getPtr();
-	gameStateManager->SetState(new Game());
-	gameStateManager->GameLoop();
-	return 0;
+namespace Game {
+	int main(int argc, char* argv[])
+	{
+		srand(time(0));
+		auto gameStateManager = GameStateManager::getPtr();
+		gameStateManager->SetState(new Game());
+		gameStateManager->GameLoop();
+		return 0;
+	}
 }
 
 // Menu 

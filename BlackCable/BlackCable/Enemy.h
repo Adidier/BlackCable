@@ -9,33 +9,33 @@
 #include "BCE/Base/Platform.h"
 #include "BCE/Base/ShaderManager.h"
 #include "BCE/Physics/SphereCollider.h"
+namespace Game {
+	using namespace BCE::Base;
+	using namespace BCE::Graphics;
 
+	class Player;
 
-using namespace BCE::Base;
-using namespace BCE::Graphics;
-
-class Player;
-
-class Enemy
-{
-protected:
-	int life;
-	int ammo;
-	float speed;
-	Model *weapon;
-	Platform* platform;
-	Transform transform;
-	Player* player;
-	SphereCollider* spCollider;
-public:
-	glm::vec3 GetTranslation();
-	float GetRadius();
-	virtual void Init() = 0;
-	virtual void Update()=0;
-	virtual void Draw() = 0;
-private:
-	virtual void Shoot() = 0;
-};
-
+	class Enemy
+	{
+	protected:
+		int life;
+		int ammo;
+		float speed;
+		Model *weapon;
+		Platform* platform;
+		Transform transform;
+		Player* player;
+		SphereCollider* spCollider;
+	public:
+		glm::vec3 GetTranslation();
+		float GetRadius();
+		virtual void Init() = 0;
+		virtual void Update() = 0;
+		virtual void Draw() = 0;
+	private:
+		virtual void Shoot() = 0;
+	};
+}
 #endif // ! 
+
 

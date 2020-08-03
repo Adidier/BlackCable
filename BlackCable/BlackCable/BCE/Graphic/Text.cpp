@@ -7,6 +7,7 @@ namespace BCE
 
 		Text::Text()
 		{
+			//hola
 			// Shader Setup
 			shaderManager = ShaderManager::getPtr();
 			shaderManager->LoadShaders("Text", "Assets/Shaders/Default/Text-Shader.vert", "Assets/Shaders/Default/Text-Shader.frag");
@@ -19,46 +20,46 @@ namespace BCE
 
 		void Text::LoadFont(string path)
 		{
-			if (FT_Init_FreeType(&_library))
-				std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
+			//if (FT_Init_FreeType(&_library))
+				//std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
 
-			if (FT_New_Face(_library, "Assets/Fonts/arial.ttf", 0, &_face))
-				std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
+			//if (FT_New_Face(_library, "Assets/Fonts/arial.ttf", 0, &_face))
+				//std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
 
-			FT_Set_Pixel_Sizes(_face, 0, 48);
+			//FT_Set_Pixel_Sizes(_face, 0, 48);
 
-			if (FT_Load_Char(_face, 'X', FT_LOAD_RENDER))
-				std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
+			//if (FT_Load_Char(_face, 'X', FT_LOAD_RENDER))
+				//std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
 
-			glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // Disable byte-alignment restriction
+			//glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // Disable byte-alignment restriction
 
-			for (GLubyte c = 0; c < 128; c++)
+			/*for (GLubyte c = 0; c < 128; c++)
 			{
 				// Load character glyph 
-				if (FT_Load_Char(_face, c, FT_LOAD_RENDER))
-				{
-					std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
-					continue;
-				}
+				//if (FT_Load_Char(_face, c, FT_LOAD_RENDER))
+				//{
+					//std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
+					//continue;
+				//}
 				// Generate texture
 				GLuint texture;
 				glGenTextures(1, &texture);
 				glBindTexture(GL_TEXTURE_2D, texture);
-				glTexImage2D(GL_TEXTURE_2D,0,GL_RED,_face->glyph->bitmap.width,_face->glyph->bitmap.rows,0,GL_RED,GL_UNSIGNED_BYTE,_face->glyph->bitmap.buffer);
+				//glTexImage2D(GL_TEXTURE_2D,0,GL_RED,_face->glyph->bitmap.width,_face->glyph->bitmap.rows,0,GL_RED,GL_UNSIGNED_BYTE,_face->glyph->bitmap.buffer);
 				// Set texture options
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 				// Now store character for later use
-				Character character = { texture, glm::ivec2(_face->glyph->bitmap.width, _face->glyph->bitmap.rows), glm::ivec2(_face->glyph->bitmap_left, _face->glyph->bitmap_top),_face->glyph->advance.x };
-				Characters.insert(std::pair<GLchar, Character>(c, character));
-			}
+				//Character character = { texture, glm::ivec2(_face->glyph->bitmap.width, _face->glyph->bitmap.rows), glm::ivec2(_face->glyph->bitmap_left, _face->glyph->bitmap_top),_face->glyph->advance.x };
+				//Characters.insert(std::pair<GLchar, Character>(c, character));
+			}*/
 
-			FT_Done_Face(_face);
-			FT_Done_FreeType(_library);
+			//FT_Done_Face(_face);
+			//FT_Done_FreeType(_library);
 
-			glEnable(GL_BLEND);
+			/*glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 			glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
@@ -71,7 +72,7 @@ namespace BCE
 			glEnableVertexAttribArray(0);
 			glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glBindVertexArray(0);
+			glBindVertexArray(0);*/
 		}
 
 		void Text::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color)
