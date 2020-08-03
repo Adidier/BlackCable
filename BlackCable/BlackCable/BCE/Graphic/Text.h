@@ -1,6 +1,4 @@
 #pragma once
-#include <ft2build.h>
-#include FT_FREETYPE_H  
 #include "Shader.h"
 #include "../Base/ShaderManager.h"
 #include "Mesh.h"
@@ -37,8 +35,8 @@ namespace BCE
 			GLuint uniformProjection;
 			GLuint uniformView;
 			ShaderManager* shaderManager;
-			FT_Library  _library;   /* handle to library     */
-			FT_Face     _face;      /* handle to face object */
+			//FT_Library  _library;   /* handle to library     */
+			//FT_Face     _face;      /* handle to face object */
 			GLuint VAO, VBO;
 			std::map<GLchar, Character> Characters;
 		};

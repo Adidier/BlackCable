@@ -11,19 +11,20 @@
 #include "Player.h"
 #include "Enemy.h"
 
-using namespace BCE::Base;
-using namespace BCE::Graphics;
+namespace Game {
+	using namespace BCE::Base;
+	using namespace BCE::Graphics;
 
-class EnemyT4 : public Enemy
-{
-public:
-	EnemyT4(glm::vec3 position, Player *player);
-	void Init();
-	void Update();
-	void Draw();
-private:
-	void Shoot();
-};
-
+	class EnemyT4 : public Enemy
+	{
+	public:
+		EnemyT4(glm::vec3 position, Player *player);
+		void Init();
+		void Update();
+		void Draw();
+	private:
+		void Shoot();
+	};
+}
 #endif // ! 
 

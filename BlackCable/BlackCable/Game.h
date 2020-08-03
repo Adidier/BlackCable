@@ -17,33 +17,35 @@
 #include <list>
 
 #include<vector>
-using namespace BCE::Base;
-using namespace BCE::Lights;
-using namespace BCE::Graphics;
-class Game : public GameState
-{
-private:
-	Platform* platform;
-	GameStateManager* manager;
-	ShaderManager* shaderManager;
-	Player* player;
-	CubeModel *cube;
-	PlaneModel* plane;
-	Model *enemy;
-	Text text;
-	Skybox skybox;
-	std::list<Enemy *> enemyPool;
+namespace Game {
+	using namespace BCE::Base;
+	using namespace BCE::Lights;
+	using namespace BCE::Graphics;
+	class Game : public GameState
+	{
+	private:
+		Platform* platform;
+		GameStateManager* manager;
+		ShaderManager* shaderManager;
+		Player* player;
+		CubeModel *cube;
+		PlaneModel* plane;
+		Model *enemy;
+		Text text;
+		Skybox skybox;
+		std::list<Enemy *> enemyPool;
 
 
-public:
-	Game();
-	virtual ~Game();
-	void Init() override;
-	void Draw() override;
-	bool Input(std::map<int, bool> keys) override;
-	bool MouseInput(int x, int y, bool leftbutton);
-	void Update() override;
-	void CreateEnemies();
-	void Close() override;
+	public:
+		Game();
+		virtual ~Game();
+		void Init() override;
+		void Draw() override;
+		bool Input(std::map<int, bool> keys) override;
+		bool MouseInput(int x, int y, bool leftbutton);
+		void Update() override;
+		void CreateEnemies();
+		void Close() override;
 
-};
+	};
+}

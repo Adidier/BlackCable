@@ -13,17 +13,17 @@
 
 using namespace BCE::Base;
 using namespace BCE::Graphics;
-
-class EnemyT5 : public Enemy
-{
-public:
-	EnemyT5(glm::vec3 position, Player *player);
-	void Init();
-	void Update();
-	void Draw();
-private:
-	void Shoot();
-};
-
+namespace Game {
+	class EnemyT5 : public Enemy
+	{
+	public:
+		EnemyT5(glm::vec3 position, Player *player);
+		void Init();
+		void Update();
+		void Draw();
+	private:
+		void Shoot();
+	};
+}
 #endif // ! 
 
